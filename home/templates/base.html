@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static from staticfiles %}
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <link rel="stylesheet" href="{% static 'css\style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css\css.css' %}">
+    <link rel="stylesheet" href="{% static 'css\icon-font.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'Images\logopng.png' %}">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css\css\all.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <div class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="{% url 'home' %}" class="navigation__link">Home</a></li>
+                <li class="navigation__item"><a href="{% url 'about' %}" class="navigation__link">About</a></li>
+                <li class="navigation__item"><a href="{% url 'portfolio' %}" class="navigation__link">Portfolio</a></li>
+                <li class="navigation__item"><a href="/blog/1/" class="navigation__link">Blogs</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">Enroll form</a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="{% static 'Images/popup1.jpg' %}" alt="Tour photo" class="popup__img">
+                <img src="{% static 'Images//popup2.jpg' %}" alt="Tour photo" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#section-courses" class="popup__close">×</a>
+                <h2 class="heading-secondary u-margin-bottom-small">Enroll now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">Important – Please read these terms before booking.
+                </h3>
+                <p class="popup__text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, ratione dolorum?
+                    Dicta quam voluptas ipsum obcaecati laborum mollitia distinctio. Earum quisquam
+                    esse est vel aperiam quis quidem commodi voluptatem voluptatum! Magnam quod quis
+                    sed fugiat quas. At vel dolorem, officia, rerum tenetur aspernatur, itaque maiores laudantium
+                    voluptas
+                    assumenda reiciendis nemo!
+                </p>
+                <a href="#" class="btn btn--blue">Enroll now</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

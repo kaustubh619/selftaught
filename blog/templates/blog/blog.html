@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+    <div class="flex1">
+    <form method="GET" action="">
+        <input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}" style="padding: 6px; font-size: 1.8rem; border-radius: 5px;">
+        <button type="submit" class="fas fa-search" style="padding: 7px; border-radius: 5px; background-color: white; border: none"></button>
+    </form>
+        <br>
+
+    {% for post in object_list %}
+    <a href="/blog/{{post.id}}" style="color: black; text-decoration: none">
+    <h2 style="margin: 1%">Date: {{post.date|date:"d-m-Y"}}</h2>
+    <h2 style="margin: 1%">Blog Title: {{post.title}}</h2>
+    </a>
+        <hr style="border: 1px solid #F0F0F0">
+    {% endfor %}
+    </div>
+
+    <div class="flex2">
+        {% include 'blog/post.html' %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}
